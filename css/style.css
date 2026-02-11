@@ -1,0 +1,49 @@
+body{
+    background-image:url(/img/background.png);
+}
+
+body .tempo{
+    box-shadow: 2px 2px 3px 3px white;
+}
+
+.tempo p{
+    color: white;
+    padding-top: 1rem;
+}
+
+.tempo{
+    border: 6px solid white;
+    border-radius: 1rem;
+    padding-right: 6rem;
+    display: inline-block;
+    margin-top: 2rem;
+    margin-left: 6px;
+}
+
+.tempo img{
+    width: 42px;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+.tempo div{
+    display: flex;
+}
+
+.movimentacao{
+    display: flex;
+    position: absolute;
+    bottom: 0cm;
+    right: 047cm;
+}
+.movimentacao img{
+    display: flexbox;
+    width: 40px;
+}
+
+.missil{
+    position: absolute;
+    top: 0cm;
+    right: -01cm;
+}
+
+
