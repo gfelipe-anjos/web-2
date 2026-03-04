@@ -12,6 +12,7 @@ body .tempo{
 }
 
 .tempo{
+    position: absolute;
     border: 6px solid white;
     border-radius: 1rem;
     padding-right: 6rem;
@@ -33,7 +34,7 @@ body .tempo{
     display: flex;
     position: absolute;
     bottom: 0cm;
-    right: 047cm;
+    right: 1cm;
 }
 .movimentacao img{
     display: flexbox;
@@ -42,7 +43,7 @@ body .tempo{
 
 .missil{
     position: absolute;
-    top: 0cm;
+    bottom: 21cm;
     right: -01cm;
 }
 
