@@ -2,16 +2,16 @@ body{
     background-image:url(/img/background.png);
 }
 
-body .tempo{
+body .temporizador{
     box-shadow: 2px 2px 3px 3px white;
 }
 
-.tempo p{
+.temporizador p{
     color: white;
     padding-top: 1rem;
 }
 
-.tempo{
+.temporizador{
     position: absolute;
     border: 6px solid white;
     border-radius: 1rem;
@@ -21,12 +21,12 @@ body .tempo{
     margin-left: 6px;
 }
 
-.tempo img{
+.temporizador img{
     width: 42px;
     padding-left: 2rem;
     padding-top: 1rem;
 }
-.tempo div{
+.temporizador div{
     display: flex;
 }
 
