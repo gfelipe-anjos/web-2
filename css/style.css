@@ -6,9 +6,9 @@ body .temporizador{
     box-shadow: 2px 2px 3px 3px white;
 }
 
-.temporizador p{
+.temporizador span, .temporizador p{
     color: white;
-    padding-top: 1rem;
+    padding-top: 2rem;
 }
 
 .temporizador{
@@ -20,6 +20,7 @@ body .temporizador{
     margin-top: 2rem;
     margin-left: 6px;
 }
+
 
 .temporizador img{
     width: 42px;
@@ -34,7 +35,7 @@ body .temporizador{
     display: flex;
     position: absolute;
     bottom: 0cm;
-    right: 1cm;
+
 }
 .movimentacao img{
     display: flexbox;
@@ -43,8 +44,12 @@ body .temporizador{
 
 .missil{
     position: absolute;
-    bottom: 21cm;
+    bottom: 22cm;
     right: -01cm;
 }
-
+.missi2{
+    position: absolute;
+    bottom: 0cm;
+    right: 01cm;
+}
 
