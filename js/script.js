@@ -28,6 +28,7 @@ function tempo(){
 function jogo(){
 
     movimentacao();
+    document.addEventListener("keydown", disparar)
 
     setInterval(() => {
         document.querySelector("#tempo").textContent = tempo();
@@ -43,12 +44,12 @@ function movimentacao(){
 
     document.addEventListener("keydown", (event) => {
 
-        if (event.key === "ArrowLeft" && posicao < 49) {
+        if (event.key === "ArrowLeft" && posicao < 50) {
             posicao += movimento;
             nave.style.right = posicao + "cm";
         }
 
-        if (event.key === "ArrowRight" && posicao > 1) {
+        if (event.key === "ArrowRight" && posicao > 3) {
             posicao -= movimento;
             nave.style.right = posicao + "cm";
         }
@@ -56,69 +57,41 @@ function movimentacao(){
     });
 }
 
-function disparar(){
+function disparar(event){
 
-    tiros++;
 
-    let missil;
+    if(event.code !== "Space") return
 
-    if (tiros == 1){
-        missil = document.querySelector("#missil1");
-    } 
-    else if (tiros == 2){
-        missil = document.querySelector("#missil2");
-    } 
-    else {
-        return;
-    }
+    let missel1 = document.querySelector("#missil1")
+    let missel2 = document.querySelector("#missil2")
+    misseisNoTopo++
 
-    let altura = 0;
+    if(tiros < 2 ){
 
-    let tiro = setInterval(() => {
+        let missil = tiros === 0 ? missel1 : missel2 
+        let altura = 0
 
-        altura += 22;
-        missil.style.bottom = altura + "cm";
+        tiros++
 
-        if (altura > 500){
-            clearInterval(tiro);
-            misseisNoTopo++;
+        let intervalo = setInterval(() => {
 
-            if(misseisNoTopo == 2){
-                voltarMisseis();
+            altura++
+            missil.style.bottom = altura + "cm"
+
+            if(altura >= 22){
+                clearInterval(intervalo)
             }
-        }
 
-    }, 20);
+        }, 20)
+    }
+    if(misseisNoTopo === 3){
+        tiros = 0
+        misseisNoTopo = 0
+        missel1.style.bottom = 0 +"cm"
+        missel2.style.bottom = 0 + "cm"
+    }
 }
 
-function voltarMisseis(){
 
-    let missil1 = document.querySelector("#missil1");
-    let missil2 = document.querySelector("#missil2");
-
-    let tiro = setInterval(() => {
-
-    altura += 1;
-    missil.style.bottom = altura + "cm";
-
-    if (altura >= 29){
-        clearInterval(tiro);
-        misseisNoTopo++;
-
-        if(misseisNoTopo == 2){
-            voltarMisseis();
-        }
-    }
-
-}, 20);
-}
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.code === "Space"){
-        disparar();
-    }
-
-});
 
 window.onload = jogo;

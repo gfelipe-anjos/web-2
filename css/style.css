@@ -39,17 +39,24 @@ body .temporizador{
 }
 .movimentacao img{
     display: flexbox;
-    width: 40px;
 }
 
-.missil{
-    position: absolute;
-    bottom: 22cm;
-    right: -01cm;
-}
-.missi2{
+.nave{
     position: absolute;
     bottom: 0cm;
-    right: 01cm;
+    width: 50px;
+}
+
+.missil1{
+    position: absolute;
+    right: 0cm;
+    bottom: 0cm;
+    width: 30px;
+}
+.missil2{
+    position: absolute;
+    width: 30px;
+    bottom: 0cm;
+    left: 1.4cm;
 }
 
