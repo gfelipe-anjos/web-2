@@ -8,6 +8,8 @@ let movimento = 1;
 let tiros = 0;
 let misseisNoTopo = 0;
 
+let pausado = false;
+
 function tempo(){
 
     segundos++;
@@ -27,11 +29,32 @@ function tempo(){
 
 function jogo(){
 
+    document.addEventListener("keydown", (event) => {
+
+    if(event.code === "KeyE"){
+
+        pausado = !pausado;
+
+        let tela = document.getElementById("pause");
+
+        if(pausado){
+            tela.style.display = "block";
+        }else{
+            tela.style.display = "none";
+        }
+    }
+
+});
+
     movimentacao();
     document.addEventListener("keydown", disparar)
 
     setInterval(() => {
+
+        if(pausado) return;
+
         document.querySelector("#tempo").textContent = tempo();
+    
     }, 1000);
 }
 
@@ -43,6 +66,8 @@ function movimentacao(){
     nave.style.right = posicao + "cm";
 
     document.addEventListener("keydown", (event) => {
+
+        if(pausado) return;
 
         if (event.key === "ArrowLeft" && posicao < 50) {
             posicao += movimento;
@@ -66,12 +91,16 @@ function disparar(event){
     let missel2 = document.querySelector("#missil2")
     misseisNoTopo++
 
+    
+
     if(tiros < 2 ){
 
         let missil = tiros === 0 ? missel1 : missel2 
         let altura = 0
 
         tiros++
+
+        if(pausado) return;
 
         let intervalo = setInterval(() => {
 
